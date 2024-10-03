@@ -32,11 +32,12 @@ public class TicTacToe {
         System.out.println(" 7 | 8 | 9 ");
         System.out.println();
         System.out.println("Use these numbers to select the position where you'd like to place your mark.");
+        System.out.println("Good luck!");
     }
 
     // Start the game after confirmation
     public boolean startGame() {
-        System.out.print("Enter 'S' to start or 'E' to exit the game: ");
+        System.out.println("Enter 'S' to start or 'E' to exit the game: ");
         String input = scanner.nextLine().trim().toLowerCase();
         return input.equals("s") || input.equals("start");
     }
@@ -68,7 +69,7 @@ public class TicTacToe {
         while (true) {
             System.out.println(isPlayer1 ? "Player 1: 'X'" : "Player 2: 'O'");
             char[] remaining = getRemainingGridNo();
-            System.out.print("Enter the grid number: (remaining: " + Arrays.toString(remaining) + ") ");
+            System.out.println("Enter the grid number: (remaining: " + Arrays.toString(remaining) + ") ");
             try {
                 int idx = Integer.parseInt(scanner.nextLine().trim());
                 if (idx < 1 || idx > 9 || grid[idx - 1] != '-') {
