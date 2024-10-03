@@ -1,5 +1,7 @@
 package dev.prithwish.consolearcade.games;
 
+import dev.prithwish.consolearcade.constants.GameStates;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -82,7 +84,7 @@ public class TicTacToe {
     }
 
     // Method to check if the game is over (win/draw)
-    public GameState isGameOver() {
+    public String isGameOver() {
         int[][] winningCombinations = {
                 {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // Horizontal
                 {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Vertical
@@ -91,7 +93,7 @@ public class TicTacToe {
 
         for (int[] combo : winningCombinations) {
             if (grid[combo[0]] != '-' && grid[combo[0]] == grid[combo[1]] && grid[combo[1]] == grid[combo[2]]) {
-                return grid[combo[0]] == 'X' ? GameState.PLAYER1_WINS : GameState.PLAYER2_WINS;
+                return grid[combo[0]] == 'X' ? GameStates.TIC_TAC_TOE_PLAYER1_WINS : GameStates.TIC_TAC_TOE_PLAYER2_WINS;
             }
         }
 
@@ -103,7 +105,7 @@ public class TicTacToe {
                 break;
             }
         }
-        return isDraw ? GameState.DRAW : GameState.NOT_FINISHED;
+        return isDraw ? GameStates.TIC_TAC_TOE_DRAW : GameStates.TIC_TAC_TOE_NOT_FINISHED;
     }
 
     // Main loop to run the game
@@ -115,15 +117,15 @@ public class TicTacToe {
             while (true) {
                 takeUserInput(isPlayer1);
                 showGrid();
-                GameState state = isGameOver();
+                String state = isGameOver();
                 switch (state) {
-                    case PLAYER1_WINS:
+                    case GameStates.TIC_TAC_TOE_PLAYER1_WINS:
                         System.out.println("PLAYER 1 (X) WINS!");
                         return;
-                    case PLAYER2_WINS:
+                    case GameStates.TIC_TAC_TOE_PLAYER2_WINS:
                         System.out.println("PLAYER 2 (O) WINS!");
                         return;
-                    case DRAW:
+                    case GameStates.TIC_TAC_TOE_DRAW:
                         System.out.println("MATCH TIED!");
                         return;
                     default:
