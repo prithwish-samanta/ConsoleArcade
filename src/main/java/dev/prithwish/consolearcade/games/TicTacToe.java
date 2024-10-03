@@ -3,14 +3,11 @@ package dev.prithwish.consolearcade.games;
 import dev.prithwish.consolearcade.constants.GameStates;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
-public class TicTacToe {
-    private final Scanner scanner;
+public class TicTacToe extends Game {
     private final char[] grid;
 
     public TicTacToe() {
-        this.scanner = new Scanner(System.in);
         this.grid = new char[]{'-', '-', '-', '-', '-', '-', '-', '-', '-'};
     }
 
@@ -33,13 +30,6 @@ public class TicTacToe {
         System.out.println();
         System.out.println("Use these numbers to select the position where you'd like to place your mark.");
         System.out.println("Good luck!");
-    }
-
-    // Start the game after confirmation
-    public boolean startGame() {
-        System.out.println("Enter 'S' to start or 'E' to exit the game: ");
-        String input = scanner.nextLine().trim().toLowerCase();
-        return input.equals("s") || input.equals("start");
     }
 
     // Method to display the current state of the grid

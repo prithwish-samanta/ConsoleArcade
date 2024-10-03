@@ -3,14 +3,8 @@ package dev.prithwish.consolearcade.games;
 import dev.prithwish.consolearcade.constants.GameStates;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public class RockPaperScissors {
-    private final Scanner scanner;
-
-    public RockPaperScissors() {
-        this.scanner = new Scanner(System.in);
-    }
+public class RockPaperScissors extends Game {
 
     // Method to display the rules of the game
     public void showRules() {
@@ -32,13 +26,6 @@ public class RockPaperScissors {
         System.out.println("2. The computer will randomly select its move.");
         System.out.println("3. The winner will be determined based on the choices made.");
         System.out.println("Good luck!");
-    }
-
-    // Start the game after confirmation
-    public boolean startGame() {
-        System.out.println("Enter 'S' to start or 'E' to exit the game: ");
-        String input = scanner.nextLine().trim().toLowerCase();
-        return input.equals("s") || input.equals("start");
     }
 
     // Method to convert 'R', 'P', 'S' to full names
