@@ -8,4 +8,27 @@ public class GameStates {
     public static final String ROCK = "ROCK";
     public static final String PAPER = "PAPER";
     public static final String SCISSORS = "SCISSORS";
+    public static final int HANGMAN_MAX_ATTEMPTS = 6;
+    public static final String[] HANGMAN_WORDS = {
+            "architecture",
+            "celebration",
+            "congratulate",
+            "perspective",
+            "adventure",
+            "transportation",
+            "mathematics",
+            "consequence",
+            "hospitality",
+            "development",
+            "temperature",
+            "intelligence",
+            "coincidence",
+            "identification",
+            "appreciation",
+            "conversation",
+            "investigation",
+            "achievement",
+            "collaboration",
+            "imagination"
+    };
 }

@@ -1,5 +1,6 @@
 package dev.prithwish.consolearcade;
 
+import dev.prithwish.consolearcade.games.Hangman;
 import dev.prithwish.consolearcade.games.RockPaperScissors;
 import dev.prithwish.consolearcade.games.TicTacToe;
 
@@ -13,6 +14,7 @@ public class App {
             System.out.println("Available Games");
             System.out.println("1. Tic Tac Toe");
             System.out.println("2. Rock Paper Scissors");
+            System.out.println("3. Hangman");
             System.out.println("Enter your choice: ");
             String choice = scanner.nextLine().trim();
             if ("1".equals(choice)) {
@@ -23,8 +25,11 @@ public class App {
                 RockPaperScissors rockPaperScissors = new RockPaperScissors();
                 rockPaperScissors.run();
                 break;
-            }
-            else {
+            } else if ("3".equals(choice)) {
+                Hangman hangman = new Hangman();
+                hangman.run();
+                break;
+            } else {
                 System.out.println("Invalid choice");
             }
         }
